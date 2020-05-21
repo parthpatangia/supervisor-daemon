@@ -5,3 +5,6 @@
 2. Number of attempts before giving up
 3. Process to supervise
 4. Check interval in seconds 
+
+### Example
+./supervisor.sh 1 2 "<process>" 4
