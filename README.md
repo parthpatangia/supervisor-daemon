@@ -7,4 +7,4 @@
 4. Check interval in seconds 
 
 ### Example
-./supervisor.sh 1 2 "<process>" 4
+./supervisor.sh 1 2 "\<process\>" 4
