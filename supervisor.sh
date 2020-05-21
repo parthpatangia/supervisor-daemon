@@ -1,7 +1,5 @@
 #! /bin/bash
 
-# 1. Create a “daemon supervisor”
-
 if [ $# -lt 4 ]
 then
 	echo "ERROR: Invalid usage of script"
@@ -17,11 +15,11 @@ log_file="process.log"
 
 attempts=0
 
-if ! 	[ -z "${second//[0-9]}" ]; 				then echo "Seconds should be integer only"; 		exit 1; fi
-if ! 	[ -z "${max_attempts//[0-9]}" ]; 		then echo "Max attempts should be integer only"; 	exit 1; fi
-if  	[ -z "${process//[ ]}" ]; 				then echo "Invalid process"; 						exit 1; fi
-if ! 	[ -z "${interval//[0-9]}" ]; 			then echo "Interval should be integer only"; 		exit 1; fi
-#if		[ -f "$log_file" ]; 					then rm $log_file; 											fi
+if ! 	[ -z "${second//[0-9]}" ]; 		then echo "Seconds should be integer only"; 		exit 1; fi
+if ! 	[ -z "${max_attempts//[0-9]}" ]; 	then echo "Max attempts should be integer only"; 	exit 1; fi
+if  	[ -z "${process//[ ]}" ]; 		then echo "Invalid process"; 				exit 1; fi
+if ! 	[ -z "${interval//[0-9]}" ]; 		then echo "Interval should be integer only"; 		exit 1; fi
+
 echo -e "Test case: \tSecond: $second \tMax Attempts: $max_attempts \tInterval: $interval \tProcess: $process" >> $log_file
 
 while true; do
